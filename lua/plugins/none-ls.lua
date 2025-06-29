@@ -16,6 +16,14 @@ return {
 
         -- C#
         null_ls.builtins.formatting.csharpier,
+
+        -- ✍️ Markdown formatters/linters
+        null_ls.builtins.formatting.markdownlint,
+        null_ls.builtins.diagnostics.markdownlint,
+        -- Optional: for inclusive writing suggestions
+        null_ls.builtins.diagnostics.alex,
+        -- Optional: use prettier for consistent formatting
+        -- null_ls.builtins.formatting.prettier.with({ filetypes = { "markdown" } }),
       },
       on_attach = function(client, bufnr)
         -- Only set up auto-format if the LSP client supports formatting
