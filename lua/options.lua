@@ -11,7 +11,7 @@ local options = {
 
   -- UI settings
   number = true,
-  relativenumber = false,
+  relativenumber = true,
   numberwidth = 4,
   signcolumn = "yes",
   cmdheight = 2,
@@ -52,10 +52,11 @@ local options = {
 
   -- Undo
   undofile = true,
+
+  -- Markdown stuff
 }
 
 -- Apply options
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-

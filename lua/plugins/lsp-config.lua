@@ -31,6 +31,8 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
+
+      -- Setup individual servers
       lspconfig.ts_ls.setup({})
       lspconfig.rust_analyzer.setup({
         settings = {
@@ -45,9 +47,25 @@ return {
         },
       })
       lspconfig.lua_ls.setup({})
+
+      -- Basic useful mappings
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+
+      -- 👇 Add LspAttach autocmd for global formatting binding
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local bufnr = args.buf
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+          if client.supports_method("textDocument/formatting") then
+            vim.keymap.set("n", "<leader>gf", function()
+              vim.lsp.buf.format({ async = true })
+            end, { buffer = bufnr, desc = "Format current buffer" })
+          end
+        end,
+      })
     end,
   },
 }

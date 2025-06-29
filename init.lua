@@ -18,5 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.clipboard = "unnamedplus"
 
 require("config.lazy")
+require("config.filetypes")
 require("keymap")
 require("options")
