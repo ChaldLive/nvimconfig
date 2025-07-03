@@ -17,6 +17,19 @@ return {
 					visible = true,
 					hide_dotfiles = false,
 				},
+				hide_by_name = {
+					".DS_Store",
+					"Thumbs.db",
+					"desktop.ini",
+					".localized",
+				},
+				never_show = {
+					".git",
+					".Trash",
+					".cache",
+					"__pycache__",
+					"node_modules",
+				},
 				follow_current_file = true, -- Follow the currently active file
 				hijack_netrw_behavior = "open_current", -- NetRW replacement
 				use_libuv_file_watcher = true, -- Faster updates
