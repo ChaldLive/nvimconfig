@@ -11,7 +11,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "rust_analyzer",
+          -- "rust_analyzer", 👈 optional: comment this out if rustaceanvim handles it via rustup
           "ts_ls",
         },
       })
@@ -32,28 +32,18 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      -- Setup individual servers
-      lspconfig.ts_ls.setup({})
-      lspconfig.rust_analyzer.setup({
-        settings = {
-          ["rust_analyzer"] = {
-            cargo = {
-              allFeatures = true,
-            },
-            checkOnSave = {
-              command = "clippy",
-            },
-          },
-        },
-      })
+      -- Setup only non-Rust language servers
+      lspconfig.tsserver.setup({})
       lspconfig.lua_ls.setup({})
 
-      -- Basic useful mappings
+      -- Optional: if using mason-lspconfig with handlers
+      -- you could exclude rust_analyzer here too
+
+      -- LSP-related keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
-      -- 👇 Add LspAttach autocmd for global formatting binding
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local bufnr = args.buf

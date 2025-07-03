@@ -43,16 +43,27 @@ lps-config url: It is an array of configs depending on eachother
 <https://github.com/williamboman/mason-lspconfig.nvim>
 <https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim>
 
+Added this plugin for full support of Rust featuring debugging etc:
+ Debugging
+
+* Zero config: No need to manually set up rust-analyzer or lspconfig—it just works.
+* Hover actions: Inline docs, type hints, and actionable popups.
+* Code actions: Grouped and categorized, with a UI overlay.
+* Debugging: Integrates with nvim-dap and codelldb for full Rust debugging.
+* Test runners: Background test execution with diagnostics.
+* Crate graph & syntax tree: Visualize your project structure.
+* Neotest integration: Built-in adapter for test discovery and execution.
+
 ## 🔗 Table of Contents
 
-- [🧠 General Keymaps](#general-keymaps)
-- [✨ Treesitter Text Objects](#treesitter-text-objects)
-  - [🔹 Selection](#selection)
-  - [🔹 Movement](#movement)
-  - [🔹 Swap](#swap)
-- [📝 Registers (`nvim-registers`)](#registers-nvim-registers)
-- [🌲 Neo-tree Window Mappings](#neo-tree-window-mappings)
-- [💬 Comment.nvim](#commentnvim)
+* [🧠 General Keymaps](#general-keymaps)
+* [✨ Treesitter Text Objects](#treesitter-text-objects)
+  * [🔹 Selection](#selection)
+  * [🔹 Movement](#movement)
+  * [🔹 Swap](#swap)
+* [📝 Registers (`nvim-registers`)](#registers-nvim-registers)
+* [🌲 Neo-tree Window Mappings](#neo-tree-window-mappings)
+* [💬 Comment.nvim](#commentnvim)
 
 ---
 
