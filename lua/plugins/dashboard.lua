@@ -7,16 +7,20 @@ return {
       local dashboard_theme = require("alpha.themes.dashboard")
 
       -- Header Section
-      local logo = [[
-  _  _                   __   __    _
- | \| |    ___     ___   \ \ / /   (_)    _ __
- | .` |   / -_)   / _ \   \ V /    | |   | '  \
- |_|\_|   \___|   \___/   _\_/_   _|_|_  |_|_|_|
-_|"""""|_|"""""|_|"""""|_| """"|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
- ]]
-
-      dashboard_theme.section.header.val = vim.split(logo, "\n")
+      local logo = {
+        [[                                                                       ]],
+        [[                                                                     ]],
+        [[       ████ ██████           █████      ██                     ]],
+        [[      ███████████             █████                             ]],
+        [[      █████████ ███████████████████ ███   ███████████   ]],
+        [[     █████████  ███    █████████████ █████ ██████████████   ]],
+        [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+        [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+        [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+        [[                                                                       ]],
+      }
+      --     dashboard_theme.section.header.val = vim.split(logo, "\n")
+      dashboard_theme.section.header.val = logo
       dashboard_theme.section.header.opts.hl = "AlphaHeaderGreen"
       vim.api.nvim_set_hl(0, "AlphaHeaderGreen", { fg = "#50fa7b", bold = true })
 
