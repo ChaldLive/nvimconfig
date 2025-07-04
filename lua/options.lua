@@ -17,13 +17,14 @@ local options = {
   cmdheight = 2,
   showmode = false,
   showtabline = 2,
-  cursorline = true,
+  cursorline = false,
   wrap = true,
   linebreak = true,
   scrolloff = 8,
   sidescrolloff = 8,
   whichwrap = "bs<>[]hl",
   termguicolors = true,
+  guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20",
 
   -- Indentation
   expandtab = true,

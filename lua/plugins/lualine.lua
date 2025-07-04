@@ -1,36 +1,25 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local git_status = require("utils.lualine_git").status_component
+    vim.opt.termguicolors = true
+    vim.opt.guicursor = "n-v-c:block"
+    vim.opt.cursorline = false
 
     require("lualine").setup({
       options = {
-        theme = "Dracula",
+        theme = "auto",
+        icons_enabled = true,
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
-        icons_enabled = true,
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = {
-          { "filename", path = 1 },
-          { git_status, icon = "" },
-        },
+        lualine_b = { "branch" },
+        lualine_c = { { "filename", path = 1 } },
         lualine_x = { "encoding", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { { "filename", path = 1 } },
-        lualine_x = { "location" },
-        lualine_y = {},
-        lualine_z = {},
-      },
-      extensions = { "nvim-tree", "quickfix", "lazy" },
     })
   end,
 }
