@@ -17,7 +17,7 @@ local options = {
   cmdheight = 2,
   showmode = false,
   showtabline = 2,
-  cursorline = false,
+  cursorline = true,
   wrap = true,
   linebreak = true,
   scrolloff = 8,
@@ -56,7 +56,6 @@ local options = {
 
   -- Markdown stuff
 }
-
 -- Apply options
 for k, v in pairs(options) do
   vim.opt[k] = v
