@@ -33,7 +33,7 @@ return {
       local lspconfig = require("lspconfig")
 
       -- Setup only non-Rust language servers
-      lspconfig.tsserver.setup({})
+      lspconfig.ts_ls.setup({})
       lspconfig.lua_ls.setup({})
 
       -- Optional: if using mason-lspconfig with handlers
