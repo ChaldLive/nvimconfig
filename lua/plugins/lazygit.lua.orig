@@ -1,0 +1,37 @@
+return {
+<<<<<<< HEAD
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
+			{ "<leader>lf", "<cmd>LazyGitCurrentFile<cr>", desc = "LazyGit (current file)" },
+			{ "<leader>lc", "<cmd>LazyGitConfig<cr>", desc = "Edit Lazygit config" },
+			{ "<leader>lh", "<cmd>LazyGitFilter<cr>", desc = "Git history (project)" },
+			{ "<leader>lH", "<cmd>LazyGitFilterCurrentFile<cr>", desc = "Git history (file)" },
+		},
+	},
+=======
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
+    },
+  },
+>>>>>>> e405d2d (Some changes to the overall files for this feature branch which will merge into develop is needed)
+}
