@@ -1,8 +1,8 @@
-Welcome to the neovim attempt of a tiny reusassable config setup.
+# Welcome to the Neovim attempt of a tiny reusassable config setup.
 
 This repository isn’t just dotfiles—it’s a personalized *Neovim learning dojo*, a configuration cauldron bubbling with plugin magic, clipboard sorcery, and just enough Git chaos to keep things interesting.
 
-This guide walks you through setting it up properly, so you can avoid the pitfalls--I went through all the valley and peaks for you making me think you don't have to experience that--and start customizing with joy rather than rebasing nightmares.
+This guide walks you through setting it up properly so you can avoid the pitfalls--I went through all the valleys and peaks for you, making me think you don't have to experience that--and start customising with joy rather than rebasing nightmares.
 
 ---
 
