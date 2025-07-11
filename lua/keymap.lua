@@ -11,7 +11,9 @@ local macros = require("macros.macroes")
 -- 🛸 Insert Mode
 map("i", "jj", "<Esc>", opts)
 map("i", "jk", "<Esc>", opts)
-
+map("i", "<C-l>", "<Right>")
+-- Rust documentation bindings and stuff. More to come
+map("n", "<leader>dc", macros.generate_rust_doc_comment, { noremap = true, silent = true })
 -- 📤 Utility
 map("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
 map("n", "<C-n>", "<cmd>Neotree filesystem reveal left<CR>", opts)
@@ -36,3 +38,4 @@ vim.keymap.set("n", "<F19>c", macros.clear_highlight, { noremap = true, silent =
 vim.keymap.set("n", "<F19>d", macros.duplicate_line, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>e", macros.run_file, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>t", macros.open_terminal, { noremap = true, silent = true })
+vim.keymap.set("n", "<F19>i", macros.get_rust_signature, { noremap = true, silent = true })
