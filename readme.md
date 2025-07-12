@@ -8,7 +8,9 @@ Treesitter for general purpose url:
 Treesitter-textobjects url:
 <https://github.com/nvim-treesitter/nvim-treesitter-textobjects>
 
-this is, by the way, a dependency in the treesitter.lua generally
+This is, by the way, a dependency in the treesitter.lua generally. This plugin may, over time, prove to be
+one of the most valuable tools for enhancing and compiling a personal collection of macros, automating all
+the repetitive, time-consuming tasks.
 
 Telescope url:
 <https://github.com/nvim-telescope/telescope.nvim>
