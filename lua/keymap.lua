@@ -18,6 +18,11 @@ map("n", "<leader>dc", macros.generate_rust_doc_comment, { noremap = true, silen
 map("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
 map("n", "<C-n>", "<cmd>Neotree filesystem reveal left<CR>", opts)
 
+-- copilot.lua keybindings
+-- Toggle Copilot on/off
+map("n", "<leader>cp", "<cmd>Copilot toggle<CR>", { desc = "Toggle GitHub Copilot" })
+
+-- map
 -- 🧪 LazyGit Mappings
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
 map("n", "<leader>lf", "<cmd>LazyGitCurrentFile<cr>", { desc = "LazyGit (current file)" })
