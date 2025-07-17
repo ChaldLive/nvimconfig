@@ -44,3 +44,11 @@ vim.keymap.set("n", "<F19>d", macros.duplicate_line, { noremap = true, silent = 
 vim.keymap.set("n", "<F19>e", macros.run_file, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>t", macros.open_terminal, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>i", macros.get_rust_signature, { noremap = true, silent = true })
+
+-- 🔑 Accept Copilot suggestion with Ctrl+Enter
+vim.g.copilot_no_tab_map = true
+map("i", "<C-CR>", 'copilot#Accept("<CR>")', { silent = true, expr = true, noremap = true })
+
+-- 🧩 Optional: Accept by word or by line
+map("i", "<C-j>", "copilot#AcceptWord()", { silent = true, expr = true, noremap = true })
+map("i", "<C-k>", "copilot#AcceptLine()", { silent = true, expr = true, noremap = true })
