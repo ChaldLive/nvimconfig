@@ -1,6 +1,9 @@
 -- File: lua/macros/init.lua
 -- Please refer to keymap.lua for the keybindings to these functions as macroes.
 local M = {}
+function M.format_only()
+	vim.lsp.buf.format()
+end
 
 function M.save_and_format()
 	vim.lsp.buf.format()

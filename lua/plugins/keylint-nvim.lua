@@ -1,19 +1,19 @@
 return {
-
-  -- 🧪 Fake test plugin for Keylint.nvim
   {
-    "ChaldLive/keylint.nvim",
-    keys = {
-      { "<leader>ff", "<cmd>FakeRun<cr>",   desc = "Fake run" },
-      { "<leader>fb", "<cmd>FakeBuild<cr>", desc = "Fake build" },
-    },
-  },
-  {
-    "ChaldLive/keylint.nvim",
+    dir = "/Users/chald/work/programming/Lua/keylint.nvim",
+    name = "keylint.nvim", -- Optional, helps Lazy label things nicely
     lazy = true,
-    cmd = "KeylintAudit",
+
+    cmd = {
+      "KeyLintConflicts",
+      "KeyLintCheatSheet",
+      "KeyLintManifest",
+      "KeyLintAudit",
+      "KeyLintDebugKeys",
+    },
+
     config = function()
-      -- No config needed yet, but you can later register filters, exclude plugins, etc.
+      require("keylint")
     end,
   },
 }

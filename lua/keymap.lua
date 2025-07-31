@@ -42,6 +42,7 @@ vim.keymap.set("n", "<F19>b", macros.toggle_comment, { noremap = true, silent = 
 vim.keymap.set("n", "<F19>c", macros.clear_highlight, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>d", macros.duplicate_line, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>e", macros.run_file, { noremap = true, silent = true })
+vim.keymap.set("n", "<F19>f", macros.format_only, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>t", macros.open_terminal, { noremap = true, silent = true })
 vim.keymap.set("n", "<F19>i", macros.get_rust_signature, { noremap = true, silent = true })
 
