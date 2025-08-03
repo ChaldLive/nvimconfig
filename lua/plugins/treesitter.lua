@@ -6,24 +6,50 @@ return {
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
+		{
+			"windwp/nvim-ts-autotag", -- Auto-close HTML/JSX tags
+		},
+		{
+			"JoosepAlviste/nvim-ts-context-commentstring", -- Smart commenting
+		},
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			auto_install = true,
 
 			ensure_installed = {
+				-- Core languages
 				"lua",
 				"python",
 				"cpp",
 				"rust",
 				"c_sharp",
 				"java",
+
+				-- Markdown
 				"markdown",
-				"markdown_inline", -- Add these two!
+				"markdown_inline",
+
+				-- Electron/Web stack
+				"javascript",
+				"typescript",
+				"tsx",
+				"html",
+				"css",
+				"json",
+				"yaml",
+				"toml",
 			},
-			--			ensure_installed = { "lua", "python", "cpp", "rust", "c_sharp", "java" }, -- Add your languages
+
 			highlight = { enable = true },
 			indent = { enable = true },
+			autotag = { enable = true }, -- Enable auto-tagging for HTML/JSX
+
+			context_commentstring = {
+				enable = true,
+				enable_autocmd = false,
+			},
+
 			textobjects = {
 				select = {
 					enable = true,
@@ -60,9 +86,10 @@ return {
 				},
 			},
 		})
+
 		-- Auto-update Treesitter parsers
 		vim.defer_fn(function()
 			vim.cmd("TSUpdate")
-		end, 0) -- Runs after startup
+		end, 0)
 	end,
 }
