@@ -13,6 +13,8 @@ return {
           "lua_ls",
           -- "rust_analyzer", 👈 optional: comment this out if rustaceanvim handles it via rustup
           "ts_ls",
+          "html",
+          "emmet_ls", -- ✅ Added Emmet LSP
         },
       })
     end,
@@ -31,13 +33,25 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- Setup only non-Rust language servers
-      lspconfig.ts_ls.setup({})
-      lspconfig.lua_ls.setup({})
+      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.html.setup({ capabilities = capabilities })
 
-      -- Optional: if using mason-lspconfig with handlers
-      -- you could exclude rust_analyzer here too
+      -- ✅ Emmet LSP setup
+      lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+        filetypes = {
+          "html",
+          "css",
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact",
+        },
+      })
 
       -- LSP-related keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
