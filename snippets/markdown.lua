@@ -10,7 +10,7 @@ return {
       "<style>",
       "  body {",
       '    font-family: "Segoe UI", sans-serif;',
-      "    font-size: 12px",
+      "    font-size: 12px;",
       "    background-color: #fefefe;",
       "    color: #222222;",
       "  }",

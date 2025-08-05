@@ -6,5 +6,5 @@ return {
   config = function()
     require("electron").setup()
   end,
-  cmd = { "ElectronNew" },
+  cmd = { "ElectronNew", "ElectronDetectRoot", "ElectronLaunch" },
 }
