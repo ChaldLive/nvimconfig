@@ -83,4 +83,19 @@ function M.generate_rust_doc_comment()
 	vim.api.nvim_buf_set_lines(0, row - 1, row - 1, false, lines)
 end
 
+-- 🧠 LuaSnip Jump & Expand
+function M.luasnip_jump_forward()
+	local ls = require("luasnip")
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end
+
+function M.luasnip_jump_backward()
+	local ls = require("luasnip")
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end
+
 return M

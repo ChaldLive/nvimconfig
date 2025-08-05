@@ -53,3 +53,7 @@ map("i", "<C-CR>", 'copilot#Accept("<CR>")', { silent = true, expr = true, norem
 -- 🧩 Optional: Accept by word or by line
 map("i", "<C-j>", "copilot#AcceptWord()", { silent = true, expr = true, noremap = true })
 map("i", "<C-k>", "copilot#AcceptLine()", { silent = true, expr = true, noremap = true })
+
+-- LuaSnip keybindings (insert + select modes)
+map({ "i", "s" }, "<Tab>", macros.luasnip_jump_forward, { expr = false, silent = true })
+map({ "i", "s" }, "<S-Tab>", macros.luasnip_jump_backward, { expr = false, silent = true })
