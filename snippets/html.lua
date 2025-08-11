@@ -26,7 +26,7 @@ return {
       "</body>",
       "</html>",
     }),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Anchor tag
   s("a", {
@@ -35,7 +35,7 @@ return {
     t('">'),
     i(2, "Link Text"),
     t("</a>"),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Image tag
   s("img", {
@@ -44,14 +44,14 @@ return {
     t('" alt="'),
     i(2, "description"),
     t('" />'),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Paragraph
   s("p", {
     t("<p>"),
     i(1, "Text here..."),
     t("</p>"),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Div with class
   s("divc", {
@@ -61,7 +61,7 @@ return {
     t({ "", "  " }),
     i(2, "Content"),
     t({ "", "</div>" }),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Button
   s("btn", {
@@ -70,7 +70,7 @@ return {
     t('">'),
     i(2, "Click me"),
     t("</button>"),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Input field
   s("input", {
@@ -81,7 +81,7 @@ return {
     t('" placeholder="'),
     i(3, "Enter text"),
     t('" />'),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Form
   s("form", {
@@ -96,7 +96,7 @@ return {
     i(4, "Send"),
     t("</button>"),
     t({ "", "</form>" }),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- Unordered list
   s("ul", {
@@ -105,12 +105,12 @@ return {
     t({ "</li>", "  <li>" }),
     i(2, "Item 2"),
     t({ "</li>", "</ul>" }),
-  }),
+  }, { snippetType = "autosnippet" }),
 
   -- HTML comment
   s("com", {
     t("<!-- "),
     i(1, "comment"),
     t(" -->"),
-  }),
+  }, { snippetType = "autosnippet" }),
 }

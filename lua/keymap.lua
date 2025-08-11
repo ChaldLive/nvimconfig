@@ -55,5 +55,17 @@ map("i", "<C-j>", "copilot#AcceptWord()", { silent = true, expr = true, noremap 
 map("i", "<C-k>", "copilot#AcceptLine()", { silent = true, expr = true, noremap = true })
 
 -- LuaSnip keybindings (insert + select modes)
-map({ "i", "s" }, "<Tab>", macros.luasnip_jump_forward, { expr = false, silent = true })
-map({ "i", "s" }, "<S-Tab>", macros.luasnip_jump_backward, { expr = false, silent = true })
+--map({ "i", "s" }, "<Tab>", macros.luasnip_jump_forward, { expr = false, silent = true })
+--map({ "i", "s" }, "<S-Tab>", macros.luasnip_jump_backward, { expr = false, silent = true })
+-- LuaSnip keybindings (insert + select modes)
+map({ "i", "s" }, "<Tab>", function()
+	macros.luasnip_jump_forward()
+end, { silent = true })
+
+map({ "i", "s" }, "<S-Tab>", function()
+	macros.luasnip_jump_backward()
+end, { silent = true })
+
+vim.keymap.set("i", "<C-e>", function()
+	require("luasnip").expand()
+end, { silent = true })
