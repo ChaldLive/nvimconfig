@@ -31,20 +31,20 @@ map("n", "<leader>lh", "<cmd>LazyGitFilter<cr>", { desc = "Git history (project)
 map("n", "<leader>lH", "<cmd>LazyGitFilterCurrentFile<cr>", { desc = "Git history (file)" })
 
 -- Telescope keybindings
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
+-- map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+-- map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+-- map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+-- map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 
 -- Macroes.lua bindings, using Karabiner-elements to fix and remap capl-lock to F19
-vim.keymap.set("n", "<F19>a", macros.save_and_format, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>b", macros.toggle_comment, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>c", macros.clear_highlight, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>d", macros.duplicate_line, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>e", macros.run_file, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>f", macros.format_only, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>t", macros.open_terminal, { noremap = true, silent = true })
-vim.keymap.set("n", "<F19>i", macros.get_rust_signature, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>a", macros.save_and_format, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>b", macros.toggle_comment, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>c", macros.clear_highlight, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>d", macros.duplicate_line, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>e", macros.run_file, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>f", macros.format_only, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>t", macros.open_terminal, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F19>i", macros.get_rust_signature, { noremap = true, silent = true })
 
 -- 🔑 Accept Copilot suggestion with Ctrl+Enter
 vim.g.copilot_no_tab_map = true
@@ -59,13 +59,13 @@ map("i", "<C-k>", "copilot#AcceptLine()", { silent = true, expr = true, noremap 
 --map({ "i", "s" }, "<S-Tab>", macros.luasnip_jump_backward, { expr = false, silent = true })
 -- LuaSnip keybindings (insert + select modes)
 map({ "i", "s" }, "<Tab>", function()
-	macros.luasnip_jump_forward()
+  macros.luasnip_jump_forward()
 end, { silent = true })
 
 map({ "i", "s" }, "<S-Tab>", function()
-	macros.luasnip_jump_backward()
+  macros.luasnip_jump_backward()
 end, { silent = true })
 
 vim.keymap.set("i", "<C-e>", function()
-	require("luasnip").expand()
+  require("luasnip").expand()
 end, { silent = true })

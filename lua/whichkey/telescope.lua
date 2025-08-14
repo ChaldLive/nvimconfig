@@ -1,7 +1,11 @@
-require("which-key").register({
-  { "<leader>f",  group = "Telescope", mode = "n" },
-  { "<leader>ff", desc = "Find files", mode = "n" },
-  { "<leader>fg", desc = "Live grep",  mode = "n" },
-  { "<leader>fb", desc = "Buffers",    mode = "n" },
-  { "<leader>fh", desc = "Help tags",  mode = "n" },
+-- lua/whichkey/telescope.lua
+
+local wk = require("which-key")
+
+wk.add({
+	{ "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "Find Files", mode = "n" },
+	{ "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Live Grep", mode = "n" },
+	{ "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", desc = "Buffers", mode = "n" },
+	{ "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", desc = "Help Tags", mode = "n" },
+	{ "<leader>f", group = "Telescope 🔭" },
 })

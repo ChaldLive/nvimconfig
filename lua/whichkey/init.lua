@@ -2,15 +2,15 @@ local wk = require("which-key")
 
 -- ✅ Setup with updated options
 wk.setup({
-	win = {
-		border = "single",
-	},
-	plugins = {
-		spelling = { enabled = true },
-	},
-	layout = {
-		align = "center",
-	},
+  win = {
+    border = "single",
+  },
+  plugins = {
+    spelling = { enabled = true },
+  },
+  layout = {
+    align = "center",
+  },
 })
 
 -- 🚀 Load all modular mappings
