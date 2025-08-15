@@ -15,28 +15,14 @@ return {
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = "rust",
 				callback = function()
-					local map = function(keys, func, desc)
-						vim.keymap.set("n", keys, func, { buffer = true, desc = desc })
-					end
+					local wk = require("which-key")
+					local rust_keys = require("whichkey.rustaceanvim")
 
-					map("<F5>", function()
-						require("dap").continue()
-					end, "Rust: DAP Continue")
-					map("<F9>", function()
-						require("dap").toggle_breakpoint()
-					end, "Rust: Toggle Breakpoint")
-					map("<F10>", function()
-						require("dap").step_over()
-					end, "Rust: Step Over")
-					map("<F11>", function()
-						require("dap").step_into()
-					end, "Rust: Step Into")
-					map("<F12>", function()
-						require("dap").step_out()
-					end, "Rust: Step Out")
-					map("<leader>dr", function()
-						vim.cmd("RustLsp debuggables")
-					end, "Rust: Pick Debbugable")
+					local ctx = {
+						buf = vim.api.nvim_get_current_buf(),
+						file = vim.api.nvim_buf_get_name(0),
+					}
+					wk.add(rust_keys(ctx), { buffer = ctx.buf, mode = "n" })
 				end,
 			})
 		end,
