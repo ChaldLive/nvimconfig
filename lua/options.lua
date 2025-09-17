@@ -32,6 +32,8 @@ local options = {
   softtabstop = 2,
   shiftwidth = 2,
   smartindent = true,
+  textwidth = 120,
+  colorcolumn = "120",
 
   -- Search
   hlsearch = true,

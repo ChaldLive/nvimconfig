@@ -9,7 +9,10 @@ return {
         ["typescript"] = true,
         ["python"] = true,
         ["lua"] = true,
+        ["text"] = true,
         ["html"] = true,
+        ["json"] = true,
+        ["yaml"] = true,
       }
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_assume_mapped = true
